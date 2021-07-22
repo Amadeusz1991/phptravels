@@ -10,15 +10,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-public class SignupTest {
+public class SignupTest extends BaseTest{
 
     @Test
     public void signUpTest() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
-        driver.get("http://www.kurs-selenium.pl/demo/");
 
         // Zakładanie konta używając randomowego emaila
         String lastName = "Jankowski";

@@ -8,19 +8,13 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class SearchWithNoResult {
+public class SearchWithNoResultTest extends BaseTest{
 
     @Test
     public void searchWithNoResult() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
-        driver.get("http://www.kurs-selenium.pl/demo/");
 
         driver.findElement(By.cssSelector("input[name='checkin']")).sendKeys("17/08/2021");
         driver.findElement(By.name("checkout")).sendKeys("24/08/2021");
-
         driver.findElement(By.id("travellersInput")).click();
         WebElement adult = driver.findElement(By.name("adults"));
         adult.clear();
@@ -32,5 +26,6 @@ public class SearchWithNoResult {
         WebElement noResultHeading = driver.findElement(By.xpath("//h2[@class='text-center']"));
         Assert.assertTrue(noResultHeading.isDisplayed());
         Assert.assertEquals(noResultHeading.getText(), "No Results Found");
+
     }
 }
