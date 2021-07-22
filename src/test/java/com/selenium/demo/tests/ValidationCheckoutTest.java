@@ -1,3 +1,6 @@
+package com.selenium.demo.tests;
+
+import com.selenium.demo.tests.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +14,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-public class ValidationCheckoutTest extends BaseTest{
+public class ValidationCheckoutTest extends BaseTest {
 
     @Test
     public void signUpWithoutCredentials() {

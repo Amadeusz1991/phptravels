@@ -1,14 +1,12 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
+package com.selenium.demo.tests;
+
+import com.selenium.demo.tests.BaseTest;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-public class SearchWithNoResultTest extends BaseTest{
+public class SearchWithNoResultTest extends BaseTest {
 
     @Test
     public void searchWithNoResult() {
