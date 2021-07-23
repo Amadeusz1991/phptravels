@@ -1,5 +1,6 @@
 package com.selenium.demo.tests;
 
+import com.selenium.demo.pages.HotelSearchPage;
 import com.selenium.demo.tests.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,10 @@ public class SignupTest extends BaseTest {
         String lastName = "Jankowski";
         int randomNumber = (int) (Math.random()*1000);
         String email = "tester" + randomNumber + "@tester.pl";
+
+        HotelSearchPage hotelSearchPage = new HotelSearchPage(driver);
+        hotelSearchPage.openSignUpForm();
+
         driver.findElements(By.xpath("//li[@id='li_myaccount']")).stream().filter(WebElement::isDisplayed).findFirst().ifPresent(WebElement::click);
         driver.findElements(By.xpath("//a[text()='  Sign Up']")).stream().filter(WebElement::isDisplayed).findFirst().ifPresent(WebElement::click);
         driver.findElement(By.name("firstname")).sendKeys("Amadeusz");
