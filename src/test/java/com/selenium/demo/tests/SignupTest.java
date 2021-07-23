@@ -1,6 +1,7 @@
 package com.selenium.demo.tests;
 
 import com.selenium.demo.pages.HotelSearchPage;
+import com.selenium.demo.pages.LoggedUserPage;
 import com.selenium.demo.pages.SignUpPage;
 import com.selenium.demo.tests.BaseTest;
 import org.openqa.selenium.By;
@@ -30,8 +31,8 @@ public class SignupTest extends BaseTest {
         signUpPage.setConfirmPassword("Test123");
         signUpPage.signButton();
 
-        WebElement heading = driver.findElement(By.xpath("//h3[@class='RTL']"));
-        Assert.assertTrue(heading.getText().contains(lastName));
-        Assert.assertEquals(heading.getText(), "Hi, Amadeusz Jankowski");
+        LoggedUserPage loggedUserPage = new LoggedUserPage(driver);
+        Assert.assertTrue(loggedUserPage.getHeadingText().contains(lastName));
+        Assert.assertEquals(loggedUserPage.getHeadingText(), "Hi, Amadeusz Jankowski");
     }
 }
