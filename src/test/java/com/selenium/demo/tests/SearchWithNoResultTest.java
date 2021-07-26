@@ -2,13 +2,10 @@ package com.selenium.demo.tests;
 
 import com.selenium.demo.pages.HotelSearchPage;
 import com.selenium.demo.pages.ResultsPage;
-import com.selenium.demo.tests.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import javax.xml.transform.Result;
 
 public class SearchWithNoResultTest extends BaseTest {
 
@@ -21,7 +18,7 @@ public class SearchWithNoResultTest extends BaseTest {
         hotelSearchPage.performSearch();
 
 
-        WebElement noResultHeading = driver.findElement(By.xpath("//h2[@class='text-center']"));
+        //WebElement noResultHeading = driver.findElement(By.xpath("//h2[@class='text-center']"));
         ResultsPage resultsPage = new ResultsPage(driver);
         Assert.assertTrue(resultsPage.resultHeading.isDisplayed());
         Assert.assertEquals(resultsPage.getHeadingText(), "No Results Found");
