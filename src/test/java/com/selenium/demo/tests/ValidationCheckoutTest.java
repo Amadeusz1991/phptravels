@@ -28,11 +28,12 @@ public class ValidationCheckoutTest extends BaseTest {
 
 
     }
+
     @Test
     public void signUpWithWrongEmail() {
         // Zakładanie konta używając randomowego emaila
         String lastName = "Jankowski";
-        int randomNumber = (int) (Math.random()*1000);
+        int randomNumber = (int) (Math.random() * 1000);
         String email = "tester" + randomNumber;
 
         HotelSearchPage hotelSearchPage = new HotelSearchPage(driver);

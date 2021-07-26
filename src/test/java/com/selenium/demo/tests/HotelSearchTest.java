@@ -1,9 +1,12 @@
 package com.selenium.demo.tests;
+
 import com.selenium.demo.pages.HotelSearchPage;
 import com.selenium.demo.pages.ResultsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.List;
+
 public class HotelSearchTest extends BaseTest {
 
     @Test
@@ -12,7 +15,7 @@ public class HotelSearchTest extends BaseTest {
         HotelSearchPage hotelSearchPage = new HotelSearchPage(driver);
         hotelSearchPage.setCity("Warsaw");
         hotelSearchPage.setDates("29/07/2021", "30/07/2021");
-        hotelSearchPage.setTravellers(1,2);
+        hotelSearchPage.setTravellers(1, 2);
         hotelSearchPage.performSearch();
 
         // Odwołanie się do klasy ResultPage

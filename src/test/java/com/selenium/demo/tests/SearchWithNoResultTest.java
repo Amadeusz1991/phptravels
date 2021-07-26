@@ -13,7 +13,7 @@ public class SearchWithNoResultTest extends BaseTest {
     public void searchWithNoResult() {
 
         HotelSearchPage hotelSearchPage = new HotelSearchPage(driver);
-        hotelSearchPage.setDates("17/08/2021","24/08/2021" );
+        hotelSearchPage.setDates("17/08/2021", "24/08/2021");
         hotelSearchPage.setTravellers(0, 1);
         hotelSearchPage.performSearch();
 
