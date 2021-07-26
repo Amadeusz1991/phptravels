@@ -1,5 +1,6 @@
 package com.selenium.demo.pages;
 
+import com.selenium.demo.model.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -73,6 +74,16 @@ public class SignUpPage {
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
         confirmPasswordInput.sendKeys(confirmPassword);
+        signUpButton.click();
+    }
+    // Metoda, która używa innej klasy z której pobierane są dane
+    public void fillSignUpForm(User user){
+        firstnameInput.sendKeys(user.getFirstName());
+        lastNameInput.sendKeys(user.getLastName());
+        phoneInput.sendKeys(user.getPhone());
+        emailInput.sendKeys(user.getEmail());
+        passwordInput.sendKeys(user.getPassword());
+        confirmPasswordInput.sendKeys(user.getConfirmPassword());
         signUpButton.click();
     }
 }
